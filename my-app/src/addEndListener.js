@@ -5,15 +5,13 @@ import "./App.css";
 const duration = 1000;
 
 function App() {
-	const [inProp, setInProp] = useState(false);
+	const [inProp, setInProp] = useState(true);
     return (
         <div>
             <Transition
                 in={inProp}
-				timeout={duration}
-				appear
-                onEnter={(node,isAppear) => {
-					console.log(isAppear);
+                timeout={duration}
+                addEndListener={(node, done) => {
 					// use the css transitionend event to mark the finish of a transition
                     node.addEventListener("transitionend", () => {
 						console.log('过渡完成');

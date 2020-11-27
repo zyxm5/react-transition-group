@@ -1,0 +1,7 @@
+.entering, .entered{
+    opacity: 1;
+}
+
+.exiting, .exited{
+    opacity: 0;
+}
